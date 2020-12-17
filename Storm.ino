@@ -145,6 +145,5 @@ void loop() {
   if (Mode == 1 && State == 1) {
     normale();
   }
-  delay(1000);
 }
     
