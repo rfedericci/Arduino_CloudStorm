@@ -126,30 +126,24 @@ int NbLightings = random(0, 9);
 }
 
 void loop() {
-  Serial.println(long(millis()/1000) - TimeStart);
-
   Mode = digitalRead(ReadBool);  
   if (long(millis()/1000) - TimeStart > 10)
   {
     State = 0;
-    Serial.println(1);
     TurnOff();
   }
   if (Modenm1 != Mode)
   {
     State = 1;
     TimeStart = long(millis()/1000);
-    Serial.println(12);
   }
   Modenm1 = Mode;
   
   if (Mode == 0 && State == 1) {    
     storm();
-    Serial.println(3);
   }
   if (Mode == 1 && State == 1) {
     normale();
-    Serial.println(4);
   }
   delay(1000);
 }
